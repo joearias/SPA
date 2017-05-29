@@ -1,7 +1,3 @@
-// (function () {
-// 'use strict';
-//
-// angular.module('NameCalculator', [])
 (function() {
 'use strict'
 
@@ -18,7 +14,7 @@
     $scope.countList = function()
     {
       var list = $scope.list.split(',');
-
+    // empty item , ,  still considered an item
     if ($scope.list==''){
       $scope.bonAppetitMessage='Please enter data first'
     }
@@ -33,10 +29,7 @@
       $scope.bonAppetitMessage=''
     }
 
-    // console.log(list);
-    // console.log($scope.bonAppetitMessage);
-
-    }
+  } //oef countlist
   };
 
 })();
