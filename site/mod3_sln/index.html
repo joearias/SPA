@@ -19,12 +19,12 @@
 
     <!-- found-items should be implemented as a component -->
     <!-- <found-items found-items="...." on-remove="...."></found-items> -->
-    <br>
-    <br>
-    <br>
-    <ul>
-      <li ng-repeat="item in NarrowDown.foundItems"> {{item.name}} </li>
-
+    <found-items
+    id="foundItems"
+    found = "NarrowDown.found"
+    on-remove="NarrowDown.dontWant(index)"
+    status = "NarrowDown.status"
+    > </found-itmes>
   </div>
 
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
