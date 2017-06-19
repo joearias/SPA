@@ -51,30 +51,11 @@ input[type="text"] {
   }
 }
 
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 5px;
-}
-
-th {
-    text-align: left;
-}
-
-table tr:nth-child(even) {
-    background-color: #eee;
-}
-table tr:nth-child(odd) {
-    background-color: #fff;
-}
-table th {
-    color: white;
-    background-color: grey;
-}
-
-#foundItems {
-  float: left;
+li[ui-sref]:hover {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+  padding-left: 5px;
+  padding-right: 5px;
 }

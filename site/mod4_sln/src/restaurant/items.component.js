@@ -3,9 +3,9 @@
 
 angular.module('MenuApp')
 .component('items',{
-  templateUrl: '' //'src/shoppinglist/templates/shoppinglist.template.html',
+  templateUrl: 'src/restaurant/templates/itemslist.template.html',
   bindings:{
-    items: '<'
+    itemsList: '<'
   }
 }
 );
