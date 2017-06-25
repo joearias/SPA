@@ -183,3 +183,18 @@ h3.menu-item-title {
     width: 100%;
   }
 }
+
+/**sign up validation**/
+.ng-touched.ng-valid
+{
+  border: 2px green solid;
+}
+
+.ng-touched.ng-invalid {
+  border: 2px red solid;
+}
+
+form[name="signupForm"] input, button{
+  margin: 10px;
+  color: #557c3e; /*rgb(85, 124, 62) the green font color*/
+};
