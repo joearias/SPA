@@ -35,7 +35,6 @@ function SignupController(InfoService){
 
   signupCtrl.favoriteItemImage = function(){
     var imgPath = `${InfoService.basePath()}/images/${signupCtrl.userInfo.ItemData.short_name}.jpg`
-    console.log(imgPath)
     return imgPath;
   }
 

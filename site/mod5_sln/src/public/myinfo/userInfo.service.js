@@ -21,7 +21,7 @@ function InfoService($http, ApiPath){
   info.validateShortName = function(shortName){
     info.status = "Validating"
     var urlString = `${ApiPath}/menu_items/${shortName.toUpperCase()}.json`
-    console.log(urlString)
+    //console.log(urlString)
 
     var response = $http({
       method: "GET",
