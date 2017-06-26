@@ -6,10 +6,9 @@ angular.module('public')
 
 SignupController.$inject = ['InfoService']
 function SignupController(InfoService){
-  console.log('signupCtrl')
+  //console.log('signupCtrl')
   var signupCtrl = this;
   signupCtrl.userInfo = InfoService.getUserInfo();
-  console.log(signupCtrl)
 
   signupCtrl.submit = function(){
     //console.log(signupCtrl)
@@ -28,6 +27,17 @@ function SignupController(InfoService){
     //console.log(InfoService.getInfoStatus());
     return InfoService.getInfoStatus() == "Invalid";
   };
+
+  signupCtrl.hasData = function(){
+    //console.log(InfoService.getInfoStatus());
+    return InfoService.hasItemData();
+  };
+
+  signupCtrl.favoriteItemImage = function(){
+    var imgPath = `${InfoService.basePath()}/images/${signupCtrl.userInfo.ItemData.short_name}.jpg`
+    console.log(imgPath)
+    return imgPath;
+  }
 
 }
 

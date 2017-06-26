@@ -26,10 +26,10 @@
   <!--Favorite menu number-->
   <input type="text" name="favmenuitem" ng-model="signupCtrl.userInfo.favmenuitem" required placeholder="Favorite Menu Number">
   <span ng-if="signupForm.favmenuitem.$error.required && signupForm.favmenuitem.$touched"><br>Please specify your favorite menu item</span>
-  <span ng-if="signupCtrl.StatusInvalid()"><br>No such menu number exists</span>
+  <span ng-if="signupCtrl.StatusInvalid() && !signupForm.$invalid"><br>No such menu number exists</span>
   <br>
   <button ng-disabled="signupForm.$invalid" ng-click="signupCtrl.submit()">Submit</button>
   <!--<label>{{signupCtrl.userInfo.firstname}}</label> -->
-  <span ng-if="signupCtrl.StatusValid()"><br>Your information has been saved</span>
+  <span ng-if="signupCtrl.StatusValid() && !signupForm.$invalid"><br>Your information has been saved</span>
   <br>
 </form>

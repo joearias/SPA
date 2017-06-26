@@ -14,11 +14,7 @@ function InfoService($http, ApiPath){
   userInfo.email = "";
   userInfo.phonenumber = "";
   userInfo.favmenuitem = "";
-
-  userInfo.firstname = 'Joe';
-  userInfo.lastname='arias';
-  userInfo.email='123@123';
-  userInfo.phonenumber = '123-123-1234'
+  userInfo.ItemData = "";
 
   info.userInfo = userInfo;
 
@@ -33,21 +29,27 @@ function InfoService($http, ApiPath){
       })
 
     return response.then(function(result){
-      console.log(result);
+
       if(result.status == 200){
       info.status = "Valid"
-      return true;
+      info.userInfo.ItemData = result.data;
+      //console.log(info.userInfo.ItemData);
+        return true;
       }
       else {
         info.status = "Invalid"
         return false;
       }
     }, function(errorResult){
-      console.log(errorResult);
+      //console.log(errorResult);
       info.status = "Invalid"
     }
   )
   }
+
+  info.hasItemData = function(){
+    return info.userInfo.ItemData != "";
+  };
 
   info.getInfoStatus = function(){
     return info.status;
@@ -59,6 +61,10 @@ info.pushUserInfo =function(userInfo){
 
 info.getUserInfo =function(userInfo){
   return info.userInfo;
+};
+
+info.basePath =function(){
+  return ApiPath;
 };
 } //InfoService
 
