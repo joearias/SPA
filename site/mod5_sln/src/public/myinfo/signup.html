@@ -1,0 +1,35 @@
+
+<h1 class="text-center">Want to be in the know?!</h1>
+<h2 class="text-center">Sign up for our newsletter,</h2>
+
+<!--first name, last name, email address, and phone number -->
+
+<form name="signupForm" novalidate class="text-center">
+  <!--first name -->
+  <input type="text" name="firstname" ng-model="signupCtrl.userInfo.firstname" required placeholder="First Name">
+  <span ng-if="signupForm.firstname.$error.required && signupForm.firstname.$touched"><br>Please enter your first name.</span>
+  <br>
+  <!--last name -->
+  <input type="text" name="lastname" ng-model="signupCtrl.userInfo.lastname" required placeholder="Last Name">
+  <span ng-if="signupForm.lastname.$error.required && signupForm.lastname.$touched"><br>Please enter your last name.</span>
+  <br>
+  <!--email -->
+  <input type="email" name="email" ng-model="signupCtrl.userInfo.email" required placeholder="Email">
+  <span ng-if="(signupForm.email.$invalid || signupForm.email.$required) && signupForm.email.$touched"><br>Please enter a valid email in the form of: example@domain </span>
+  <br>
+  <!--phone number-->
+  <input type="text" name="phonenumber" ng-model="signupCtrl.userInfo.phonenumber"
+  required pattern="(\d{3})-(\d{3})-(\d{4})" placeholder="Phone ###-###-####">
+  <span ng-if="(signupForm.phonenumber.$error.required || signupForm.phonenumber.$invalid)  && signupForm.phonenumber.$touched"><br>Phone must be in the format ###-###-####.
+  </span>
+  <br>
+  <!--Favorite menu number-->
+  <input type="text" name="favmenuitem" ng-model="signupCtrl.userInfo.favmenuitem" required placeholder="Favorite Menu Number">
+  <span ng-if="signupForm.favmenuitem.$error.required && signupForm.favmenuitem.$touched"><br>Please specify your favorite menu item</span>
+  <span ng-if="signupCtrl.StatusInvalid() && !signupForm.$invalid"><br>No such menu number exists</span>
+  <br>
+  <button ng-disabled="signupForm.$invalid" ng-click="signupCtrl.submit()">Submit</button>
+  <!--<label>{{signupCtrl.userInfo.firstname}}</label> -->
+  <span ng-if="signupCtrl.StatusValid() && !signupForm.$invalid"><br>Your information has been saved</span>
+  <br>
+</form>

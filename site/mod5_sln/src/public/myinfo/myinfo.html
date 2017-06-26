@@ -1,0 +1,21 @@
+<div class="text-center" ng-controller="SignupController as signupCtrl">
+  <h1 class="text-center" ng-if="!signupCtrl.hasData()">Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></h1>
+  <h1 ng-if="signupCtrl.hasData()">My Info:</h1>
+
+  <div ng-if="signupCtrl.hasData()">
+    <form name="myInfo" class="containter">
+    <span>Fist Name: </span> <label>{{signupCtrl.userInfo.firstname}}</label> <br>
+    <span>Last Name: </span> <label>{{signupCtrl.userInfo.lastname}}</label><br>
+    <span>Email: </span> <label>{{signupCtrl.userInfo.email}}</label><br>
+    <span>Phone: </span> <label>{{signupCtrl.userInfo.phonenumber}}</label><br>
+    <span>Favorite Item:</span> <label>{{signupCtrl.userInfo.ItemData.name}}</label><br>
+    <div class="favorite-item-image">
+      <img class="center-block" width="250" height="150" ng-src="{{signupCtrl.favoriteItemImage()}}" alt="{{signupCtrl.userInfo.ItemData.name}}">
+    </div>
+    <div>
+      <span>Description: </span><label>{{signupCtrl.userInfo.ItemData.description}}</label><br>
+    </div>
+    </form>
+</div>
+
+</div>
